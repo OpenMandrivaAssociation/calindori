@@ -2,14 +2,12 @@
 %define commit 5a433437347f738eddcdd9e10bf16a75ef81b1fc
 
 Name:		calindori
-Version:	0.0
-Release:	0.%{snapshot}.1
+Version:	1.2
+Release:	1
 Summary:	Calendar and todo management application for Plasma Mobile
-Source0:	https://invent.kde.org/plasma-mobile/calindori/-/archive/master/calindori-%{snapshot}.tar.bz2
+Source0:	https://download.kde.org/stable/calindori/%{name}-%{version}.tar.xz
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Core)
@@ -29,10 +27,10 @@ BuildRequires:	cmake(KF5Service)
 BuildRequires:	cmake(PkgConfig)
 
 %description
-Calendar and todo management application for Plasma Mobile
+Calendar and todo management application for Plasma Mobile.
 
 %prep
-%autosetup -p1 -n %{name}-master-%{commit}
+%autosetup -p1
 %cmake_kde5 -G Ninja
 
 %build
