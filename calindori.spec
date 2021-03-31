@@ -1,11 +1,11 @@
-%define snapshot 20200710
-%define commit 5a433437347f738eddcdd9e10bf16a75ef81b1fc
+#define snapshot 20200710
+#define commit 5a433437347f738eddcdd9e10bf16a75ef81b1fc
 
 Name:		calindori
-Version:	1.2
+Version:	1.4
 Release:	1
 Summary:	Calendar and todo management application for Plasma Mobile
-Source0:	https://download.kde.org/stable/calindori/%{name}-%{version}.tar.xz
+Source0:	https://invent.kde.org/plasma-mobile/calindori/-/archive/v%{version}/calindori-v%{version}.tar.bz2
 License:	GPLv3
 Group:		Applications/Productivity
 BuildRequires:	cmake(ECM)
@@ -30,7 +30,7 @@ BuildRequires:	cmake(PkgConfig)
 Calendar and todo management application for Plasma Mobile.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-v%{version}
 %cmake_kde5 -G Ninja
 
 %build
@@ -44,7 +44,7 @@ Calendar and todo management application for Plasma Mobile.
 %{_bindir}/calindac
 %{_bindir}/calindori
 %{_datadir}/applications/org.kde.calindori.desktop
-%{_datadir}/dbus-1/interfaces/org.kde.calindac.xml
 %{_datadir}/icons/hicolor/scalable/apps/calindori.svg
 %{_datadir}/knotifications5/calindac.notifyrc
+%{_datadir}/dbus-1/services/org.kde.calindac.service
 %{_datadir}/metainfo/org.kde.calindori.appdata.xml
