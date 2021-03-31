@@ -24,6 +24,7 @@ BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(KF5People)
 BuildRequires:	cmake(PkgConfig)
 
 %description
