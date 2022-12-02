@@ -2,7 +2,7 @@
 #define commit 5a433437347f738eddcdd9e10bf16a75ef81b1fc
 
 Name:		calindori
-Version:	22.09
+Version:	22.11
 Release:	1
 Summary:	Calendar and todo management application for Plasma Mobile
 Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
