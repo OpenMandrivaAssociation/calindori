@@ -3,7 +3,7 @@
 
 Name:		calindori
 Version:	22.11
-Release:	1
+Release:	2
 Summary:	Calendar and todo management application for Plasma Mobile
 Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
 License:	GPLv3
