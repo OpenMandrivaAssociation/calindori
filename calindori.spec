@@ -1,11 +1,16 @@
-#define snapshot 20200710
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+#define git 20200710
 #define commit 5a433437347f738eddcdd9e10bf16a75ef81b1fc
 
 Name:		calindori
-Version:	22.11
-Release:	2
+Version:	23.08.0
+Release:	%{?git:0.%{git}.}1
 Summary:	Calendar and todo management application for Plasma Mobile
-Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
+%if 0%{?git}
+Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
+%else
+Source0:        http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+%endif
 License:	GPLv3
 Group:		Applications/Productivity
 BuildRequires:	cmake(ECM)
@@ -31,7 +36,7 @@ BuildRequires:	cmake(PkgConfig)
 Calendar and todo management application for Plasma Mobile.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{?git:master}%{!?git:%{version}}
 %cmake_kde5 -G Ninja
 
 %build
