@@ -4,7 +4,7 @@
 
 Name:		calindori
 Version:	23.08.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Calendar and todo management application for Plasma Mobile
 %if 0%{?git}
 Source0:        https://invent.kde.org/plasma-mobile/%{name}/-/archive/master/%{name}-master.tar.bz2
