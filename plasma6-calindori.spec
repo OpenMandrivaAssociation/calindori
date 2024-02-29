@@ -1,11 +1,11 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20240218
+#define git 20240218
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 #define commit 6a433437347f738eddcdd9e10bf16a76ef81b1fc
 
 Name:		plasma6-calindori
-Version:	24.01.96
+Version:	24.02.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Calendar and todo management application for Plasma Mobile
 %if 0%{?git}
