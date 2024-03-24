@@ -5,8 +5,8 @@
 #define commit 6a433437347f738eddcdd9e10bf16a76ef81b1fc
 
 Name:		plasma6-calindori
-Version:	24.02.0
-Release:	%{?git:0.%{git}.}2
+Version:	24.02.1
+Release:	%{?git:0.%{git}.}1
 Summary:	Calendar and todo management application for Plasma Mobile
 %if 0%{?git}
 Source0:        https://invent.kde.org/plasma-mobile/calindori/-/archive/%{gitbranch}/calindori-%{gitbranchd}.tar.bz2
