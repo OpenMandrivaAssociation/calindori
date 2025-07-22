@@ -5,7 +5,7 @@
 #define commit 6a433437347f738eddcdd9e10bf16a76ef81b1fc
 
 Name:		calindori
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Calendar and todo management application for Plasma Mobile
 %if 0%{?git}
@@ -34,24 +34,15 @@ BuildRequires:	cmake(KF6Service)
 BuildRequires:	cmake(KF6People)
 BuildRequires:	cmake(PkgConfig)
 
+%rename plasma6-calindori
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Calendar and todo management application for Plasma Mobile.
 
-%prep
-%autosetup -p1 -n calindori-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang calindac
-%find_lang calindori
-
-%files -f calindac.lang -f calindori.lang
+%files -f %{name}.lang
 %{_sysconfdir}/xdg/autostart/org.kde.calindac.desktop
 %{_bindir}/calindac
 %{_bindir}/calindori
